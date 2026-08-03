@@ -184,7 +184,6 @@ body {
 
 @keyframes spin { 100% { transform: rotate(360deg); } }
 
-/* Float numbers */
 .floating-number {
     position: absolute;
     color: #fff;
