@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Clicker Pro</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header class="header">
+            <h1 class="logo">NEO-MINER</h1>
+            <div class="stats-bar">
+                <div class="stat-box">
+                    <span class="stat-label">Переродження</span>
+                    <span class="stat-value" id="rebirth-count">0</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">Множник</span>
+                    <span class="stat-value" id="multiplier-value">x1.0</span>
+                </div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <section class="mining-section">
+                <div class="balance-container">
+                    <h2 class="balance-amount" id="balance">0.00000000</h2>
+                    <span class="balance-currency">BTC</span>
+                </div>
+                <div class="per-second" id="per-second">0.00000000 BTC / сек</div>
+                
+                <div class="coin-container" id="coin-container">
+                    <img src="bitcoin.jpg" alt="Bitcoin" class="bitcoin-coin" id="click-target">
+                    <div class="cooldown-overlay" id="cooldown-overlay"></div>
+                </div>
+            </section>
+
+            <aside class="upgrades-section">
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="upgrades">Оновлення</button>
+                    <button class="tab-btn" data-tab="rebirth">Сингулярність</button>
+                </div>
+                
+                <div class="tab-content active" id="tab-upgrades">
+                    <div class="upgrade-card" id="upg-click">
+                        <div class="upg-info">
+                            <h3>Краще Обладнання</h3>
+                            <p>+0.00010000 BTC за клік</p>
+                            <span class="level">Рівень <span id="lvl-click">0</span></span>
+                        </div>
+                        <button class="buy-btn" id="buy-click">
+                            <span class="cost" id="cost-click">0.00100000</span> BTC
+                        </button>
+                    </div>
+
+                    <div class="upgrade-card" id="upg-auto">
+                        <div class="upg-info">
+                            <h3>Авто-Майнер</h3>
+                            <p>+0.00050000 BTC за сек</p>
+                            <span class="level">Рівень <span id="lvl-auto">0</span></span>
+                        </div>
+                        <button class="buy-btn" id="buy-auto">
+                            <span class="cost" id="cost-auto">0.00500000</span> BTC
+                        </button>
+                    </div>
+
+                    <div class="upgrade-card" id="upg-crit">
+                        <div class="upg-info">
+                            <h3>Квантова Вдача</h3>
+                            <p>+1% шанс на x5 Клік</p>
+                            <span class="level">Рівень <span id="lvl-crit">0</span></span>
+                        </div>
+                        <button class="buy-btn" id="buy-crit">
+                            <span class="cost" id="cost-crit">0.01000000</span> BTC
+                        </button>
+                    </div>
+
+                    <div class="upgrade-card" id="upg-overclock">
+                        <div class="upg-info">
+                            <h3>Нейронний Розгін</h3>
+                            <p>+0.00200000 BTC за клік</p>
+                            <span class="level">Рівень <span id="lvl-overclock">0</span></span>
+                        </div>
+                        <button class="buy-btn" id="buy-overclock">
+                            <span class="cost" id="cost-overclock">0.05000000</span> BTC
+                        </button>
+                    </div>
+
+                    <div class="upgrade-card" id="upg-node">
+                        <div class="upg-info">
+                            <h3>Синдикат-Вузол</h3>
+                            <p>+0.01000000 BTC за сек</p>
+                            <span class="level">Рівень <span id="lvl-node">0</span></span>
+                        </div>
+                        <button class="buy-btn" id="buy-node">
+                            <span class="cost" id="cost-node">0.15000000</span> BTC
+                        </button>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="tab-rebirth">
+                    <div class="rebirth-card">
+                        <h3>Точка Сингулярності</h3>
+                        <p>Скиньте матрицю, щоб отримати постійний множник доходу та перевершити простір.</p>
+                        <div class="rebirth-stats">
+                            <div>Наступний множник: <span class="highlight" id="next-multiplier">x2.0</span></div>
+                            <div>Вартість: <span class="highlight" id="rebirth-cost">1.00000000</span> BTC</div>
+                        </div>
+                        <button class="rebirth-btn" id="btn-rebirth">Переродження</button>
+                    </div>
+                </div>
+            </aside>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
