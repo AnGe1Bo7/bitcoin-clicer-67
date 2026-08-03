@@ -15,6 +15,34 @@ const state = {
     }
 };
 
+function saveGame() {
+    localStorage.setItem('bitcoinClickerSave', JSON.stringify(state));
+}
+
+function loadGame() {
+    const saved = localStorage.getItem('bitcoinClickerSave');
+    if (saved) {
+        try {
+            const parsed = JSON.parse(saved);
+            state.balance = parsed.balance ?? state.balance;
+            state.rebirths = parsed.rebirths ?? state.rebirths;
+            state.multiplier = parsed.multiplier ?? state.multiplier;
+            
+            if (parsed.upgrades) {
+                for (const key in state.upgrades) {
+                    if (parsed.upgrades[key]) {
+                        state.upgrades[key].level = parsed.upgrades[key].level ?? state.upgrades[key].level;
+                        state.upgrades[key].cost = parsed.upgrades[key].cost ?? state.upgrades[key].cost;
+                    }
+                }
+            }
+            state.isCooldown = false;
+        } catch (e) {
+            console.error("Error loading save", e);
+        }
+    }
+}
+
 const dom = {
     balance: document.getElementById('balance'),
     perSecond: document.getElementById('per-second'),
@@ -183,6 +211,7 @@ function buyUpgrade(key) {
         state.upgrades[key].level++;
         state.upgrades[key].cost *= state.upgrades[key].costMult;
         updateUI();
+        saveGame();
     }
 }
 
@@ -210,6 +239,7 @@ dom.btnRebirth.addEventListener('click', () => {
         state.upgrades.node.cost = 0.15000000;
         
         updateUI();
+        saveGame();
     }
 });
 
@@ -231,4 +261,8 @@ setInterval(() => {
     }
 }, 100);
 
+loadGame();
 updateUI();
+
+setInterval(saveGame, 5000);
+window.addEventListener('beforeunload', saveGame);
