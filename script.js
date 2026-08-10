@@ -273,3 +273,11 @@ window.addEventListener('beforeunload', saveGame);
 function buyEasterEgg() {
     alert("100МЛРД БАКСОВ!");
 }
+
+const button = document.querySelector('.dontdoit');
+
+button.addEventListener('click', function () {
+    state.balance += 100;
+    updateUI();
+    saveGame();
+});
