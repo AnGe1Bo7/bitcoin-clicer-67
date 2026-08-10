@@ -7,11 +7,11 @@ const state = {
     isCooldown: false,
     cooldownMs: 150,
     upgrades: {
-        click: { level: 0, cost: 0.00100000, increment: 0.00010000, costMult: 1.4 },
+        click: { level: 0, cost: 0.00100000, increment: 0.00010000, costMult: 1.5 },
         auto: { level: 0, cost: 0.00500000, increment: 0.00050000, costMult: 1.5 },
-        crit: { level: 0, cost: 0.01000000, increment: 1, costMult: 1.8 },
-        overclock: { level: 0, cost: 0.05000000, increment: 0.00200000, costMult: 1.6 },
-        node: { level: 0, cost: 0.15000000, increment: 0.01000000, costMult: 1.7 }
+        crit: { level: 0, cost: 0.01000000, increment: 1, costMult: 2.0 },
+        overclock: { level: 0, cost: 0.05000000, increment: 0.00200000, costMult: 1.5 },
+        node: { level: 0, cost: 0.15000000, increment: 0.01000000, costMult: 2.0 }
     }
 };
 
