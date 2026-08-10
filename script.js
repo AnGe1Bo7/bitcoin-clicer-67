@@ -268,5 +268,5 @@ setInterval(saveGame, 5000);
 window.addEventListener('beforeunload', saveGame);
 
 function buyEasterEgg() {
-    alert("🎉 Вітаємо! Ти знайшов пасхалку!");
+    alert("КАКАШКА!");
 }
