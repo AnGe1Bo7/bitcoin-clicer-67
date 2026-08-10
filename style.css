@@ -299,6 +299,7 @@ body::before {
 
 .upgrades-section {
     width: 380px;
+    flex-shrink: 0;
     background: var(--panel-bg);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
