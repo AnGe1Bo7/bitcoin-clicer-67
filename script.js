@@ -82,6 +82,9 @@ const dom = {
 dom.cooldownOverlay.innerHTML = '<div class="cooldown-spinner"></div>';
 
 function formatBTC(val) {
+    if (val >= 1) {
+        return Math.floor(val).toString();
+    }
     return val.toFixed(8);
 }
 
@@ -268,5 +271,5 @@ setInterval(saveGame, 5000);
 window.addEventListener('beforeunload', saveGame);
 
 function buyEasterEgg() {
-    alert("КАКАШКА!");
+    alert("100МЛРД БАКСОВ!");
 }
