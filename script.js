@@ -85,7 +85,7 @@ function formatBTC(val) {
     if (val >= 1) {
         return Math.floor(val).toString();
     }
-    return val.toFixed(8);
+    return val.toFixed(4);
 }
 
 function getClickValue() {
