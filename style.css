@@ -487,3 +487,8 @@ body::before {
     color: var(--accent);
     font-weight: 700;
 }
+.dontdoit {
+    background: transparent;
+    border: #000;
+    font-size: 5px;
+}
